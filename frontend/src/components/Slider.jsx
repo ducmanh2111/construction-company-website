@@ -7,10 +7,6 @@ const Slider = () => {
                 className="Modern-Slider slick-initialized slick-slider"
                 role="toolbar"
             >
-                <button
-                    className="PrevArrow slick-arrow"
-                    style={{ display: "block" }}
-                />
                 {/* Item */}
                 <div aria-live="polite" className="slick-list">
                     <div
