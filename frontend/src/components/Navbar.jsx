@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -25,7 +26,7 @@ const Navbar = () => {
                 <div id="dl-menu" className="dl-menuwrapper">
                     <ul className="dl-menu dl-menuopen">
                         <li>
-                            <a href="index.html">home</a>
+                            <Link to="/home">home</Link>
                         </li>
                         <li>
                             <a href="about.html">about</a>
@@ -37,13 +38,13 @@ const Navbar = () => {
                             <a href="#">House</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="gallery.html">Villa</a>
+                                    <Link to="/list">Villa</Link>
                                 </li>
                                 <li>
-                                    <a href="testimonials.html">Tube House</a>
+                                    <Link to="/list">Tube House</Link>
                                 </li>
                                 <li>
-                                    <a href="rooms-single.html">Apartment</a>
+                                    <Link to="/list">Apartment</Link>
                                 </li>
                             </ul>
                         </li>
@@ -51,13 +52,13 @@ const Navbar = () => {
                             <a href="#">Room</a>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="gallery.html">Bedroom</a>
+                                    <Link to="/list">Bedroom</Link>
                                 </li>
                                 <li>
-                                    <a href="testimonials.html">Kitchen</a>
+                                    <Link to="/list">Kitchen</Link>
                                 </li>
                                 <li>
-                                    <a href="rooms-single.html">Toilet</a>
+                                    <Link to="/list">Toilet</Link>
                                 </li>
                             </ul>
                         </li>
@@ -68,29 +69,29 @@ const Navbar = () => {
             <footer className="footer" style={{}}>
                 <ul className="social-icons">
                     <li>
-                        <a href="#" target="_blank">
+                        <Link to="#" target="_blank">
                             <i className="fa fa-facebook" />
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" target="_blank">
+                        <Link to="#" target="_blank">
                             <i className="fa fa-twitter" />
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" target="_blank">
+                        <Link to="#" target="_blank">
                             <i className="fa fa-pinterest" />
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" target="_blank">
+                        <Link to="#" target="_blank">
                             <i className="fa fa-yelp" />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
-                <div className="copyright">
-                    © 2016 <a href="index.html">Pension</a>.
-                </div>
+                {/* <div className="copyright">
+                    © 2021 <Link to="#"></Link>
+                </div> */}
             </footer>
         </nav>
     );
