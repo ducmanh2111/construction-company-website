@@ -3,25 +3,55 @@ import React from "react";
 const Slider = () => {
     return (
         <>
-            <header
-                className="page-header full-image-background"
-                style={{ backgroundImage: "url(assets/img/7.jpg)" }}
+            <div
+                className="Modern-Slider slick-initialized slick-slider"
+                role="toolbar"
             >
-                <div className="container-fluid">
-                    <div className="col-md-10 col-md-offset-1">
-                        <div className="text-center">
-                            <h2 className="white">
-                                Room Indigo - $67/per night
-                            </h2>
-                        </div>
-                        <div className="header-intro">
-                            Cosy Nights. Wood Fire.
-                            <br />
-                            Comfort Stay.
+                <button
+                    className="PrevArrow slick-arrow"
+                    style={{ display: "block" }}
+                />
+                {/* Item */}
+                <div aria-live="polite" className="slick-list">
+                    <div
+                        className="slick-track"
+                        role="listbox"
+                        style={{ opacity: 1, width: 3465 }}
+                    >
+                        <div
+                            className="item slick-slide slick-current slick-active"
+                            data-slick-index={0}
+                            aria-hidden="false"
+                            tabIndex={-1}
+                            role="option"
+                            aria-describedby="slick-slide00"
+                            style={{
+                                width: 1155,
+                                position: "relative",
+                                left: 0,
+                                top: 0,
+                                zIndex: 999,
+                                opacity: 1,
+                            }}
+                        >
+                            <div className="img-fill">
+                                <img src="assets/img/1.jpg" alt />
+                                <div className="info">
+                                    <div className="container">
+                                        <span className="line-1">
+                                            Peaceful escape from the city
+                                        </span>
+                                        <h1 className="line-2">Pension</h1>
+                                        <span className="line-3">
+                                            Mountain Cabin
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
         </>
     );
 };
