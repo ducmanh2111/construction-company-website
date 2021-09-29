@@ -15,6 +15,8 @@ group :development, :test do
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-performance"
+  gem "pry-rails"
+  gem "pry", "0.13.1"
 end
 
 group :development do
