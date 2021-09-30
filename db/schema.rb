@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_163311) do
+ActiveRecord::Schema.define(version: 2021_09_29_150616) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_name", default: "", null: false
@@ -23,4 +23,16 @@ ActiveRecord::Schema.define(version: 2021_09_27_163311) do
     t.index ["user_name"], name: "index_admins_on_user_name", unique: true
   end
 
+  create_table "refresh_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "crypted_token"
+    t.string "old_token"
+    t.bigint "admin_id", null: false
+    t.datetime "exp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_refresh_tokens_on_admin_id"
+    t.index ["crypted_token"], name: "index_refresh_tokens_on_crypted_token", unique: true
+  end
+
+  add_foreign_key "refresh_tokens", "admins"
 end
