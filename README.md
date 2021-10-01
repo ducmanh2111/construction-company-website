@@ -8,8 +8,12 @@
 ```
 git clone git@github.com:ducmanh2111/construction-company-website.git
 ```
-
-2. Build and run Docker
+2. Copy .env.example and database.yml.example 
+```
+cp backend/.env.example backend/.env
+cp backend/config/database.yml.example backend/config/database.yml
+```
+3. Build and run Docker
 ```
   docker-compose build
   docker-compose up -d
