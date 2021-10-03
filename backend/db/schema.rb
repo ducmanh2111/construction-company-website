@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_150616) do
+ActiveRecord::Schema.define(version: 2021_10_03_004439) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_name", default: "", null: false
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(version: 2021_09_29_150616) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_name"], name: "index_admins_on_user_name", unique: true
+  end
+
+  create_table "house_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.index ["name"], name: "index_house_categories_on_name", unique: true
+  end
+
+  create_table "houses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "house_category_id"
+    t.string "name", null: false
+    t.string "address", null: false
+    t.integer "floors", limit: 2, null: false
+    t.integer "year", limit: 2
+    t.string "country"
+    t.boolean "status", default: true
+    t.text "description"
+    t.float "area", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["house_category_id"], name: "index_houses_on_house_category_id"
   end
 
   create_table "refresh_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -34,5 +54,6 @@ ActiveRecord::Schema.define(version: 2021_09_29_150616) do
     t.index ["crypted_token"], name: "index_refresh_tokens_on_crypted_token", unique: true
   end
 
+  add_foreign_key "houses", "house_categories"
   add_foreign_key "refresh_tokens", "admins"
 end
