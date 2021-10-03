@@ -1,6 +1,6 @@
 module Api
   module V1
-    class HouseCategoriesController < ApplicationController
+    class HouseCategoriesController < BaseController
       def create
         house_category = HouseCategory.new
         if house_category.update(house_category_params)
