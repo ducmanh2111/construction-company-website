@@ -2,7 +2,7 @@ class JsonWebToken
   HMAC_SECRET = Rails.application.secrets.secret_key_base
 
   class << self
-    def encode(payload, exp = 30.minutes.from_now)
+    def encode(payload, exp = 30.hours.from_now)
       payload[:exp] = exp.to_i
       ::JWT.encode(payload, HMAC_SECRET)
     end
