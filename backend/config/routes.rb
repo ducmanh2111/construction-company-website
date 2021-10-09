@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       resources :house_categories, only: [:create, :show, :update, :destroy]
       resources :houses, only: [:create, :show, :update, :destroy]
       resources :room_categories, only: [:create, :show, :update, :destroy]
+
+      namespace :user do
+        resources :house_categories, only: [:index, :show]
+      end
     end
   end
 end
