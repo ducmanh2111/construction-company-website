@@ -80,11 +80,11 @@ module ResponseHandler
   end
 
   def render_index(data, meta = {}, data_name: nil, serializer: nil)
-    data_name ||= data.klass.name.downcase
+    data_name ||= data.klass.name
     render json: data,
            each_serializer: serializer,
            meta: {
-             message: I18n.t("api.message.get_successfully", data_name: data_name)
+             message: I18n.t("api.message.get_list_successfully", data_name: data_name)
            }.merge(meta),
            status: :ok
   end

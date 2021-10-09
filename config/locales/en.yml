@@ -7,4 +7,5 @@ en:
       created: '%{class_name} %{name} create success!'
       updated: '%{class_name} %{name} update success!'
       get_successfully: 'Get %{class_name} %{name} successfully!'
+      get_list_successfully: 'Get %{data_name} successfully!'
       not_found: 'NOT found!'
