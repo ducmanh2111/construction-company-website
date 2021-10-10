@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
       namespace :user do
         resources :house_categories, only: [:index, :show]
+        resources :houses, only: [:index, :show]
       end
     end
   end
