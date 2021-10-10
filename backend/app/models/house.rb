@@ -1,5 +1,6 @@
 class House < ApplicationRecord
   belongs_to :house_category
+  has_many :rooms, dependent: :delete_all
 
   validates :name, presence: true
   validates :address, presence: true
