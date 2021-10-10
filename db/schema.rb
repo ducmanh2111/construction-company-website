@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_134538) do
+ActiveRecord::Schema.define(version: 2021_10_10_002323) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_name", default: "", null: false
@@ -59,6 +59,21 @@ ActiveRecord::Schema.define(version: 2021_10_05_134538) do
     t.index ["name"], name: "index_room_categories_on_name", unique: true
   end
 
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "room_category_id"
+    t.bigint "house_id", null: false
+    t.float "area", null: false
+    t.integer "door", default: 0, null: false
+    t.integer "window", default: 0, null: false
+    t.string "door_direction", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["house_id"], name: "index_rooms_on_house_id"
+    t.index ["room_category_id"], name: "index_rooms_on_room_category_id"
+  end
+
   add_foreign_key "houses", "house_categories"
   add_foreign_key "refresh_tokens", "admins"
+  add_foreign_key "rooms", "houses"
+  add_foreign_key "rooms", "room_categories"
 end
