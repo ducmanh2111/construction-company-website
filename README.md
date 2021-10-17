@@ -20,6 +20,11 @@ cp backend/config/database.yml.example backend/config/database.yml
   # Open new terminal
     docker-compose exec frontend bash
     yarn start
+  # Open new terminal
     docker-compose exec backend bash
+    bundle install (only run on first build in Development)
+    bundle exec rails db:create (only run on first build in Development)
+    bundle exec rails db:migrate (only run on first build in Development)
+    bundle exec rails db:seed (only run on first build in Development)
     bundle exec rails s -b 0.0.0.0
 ```
