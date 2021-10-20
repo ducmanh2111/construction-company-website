@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import List from "./pages/List";
+import Dashboard from "./pages/admin/Dashboard";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/list" component={List} />
                     <Route exact path="/detail" component={Detail} />
+                    <Route exact path="/admin" component={Dashboard} />
                 </Switch>
                 <Footer />
             </div>

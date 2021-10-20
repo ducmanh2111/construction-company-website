@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ListProducts = () => {
-    const [items, setItems] = useState([1, 2, 3]);
+    const [items] = useState([1, 2, 3]);
 
     return (
         <>

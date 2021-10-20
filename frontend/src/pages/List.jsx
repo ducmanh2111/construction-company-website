@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const List = () => {
-    const [items, setItems] = useState([1, 2, 3, 4]);
+    const [items] = useState([1, 2, 3, 4]);
 
     return (
         <>
