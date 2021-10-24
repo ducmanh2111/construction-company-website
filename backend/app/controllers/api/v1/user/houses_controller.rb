@@ -3,7 +3,7 @@ module Api
     module User
       class HousesController < ApplicationController
         def index
-          houses = House.all
+          houses = params[:house_category_id] ? House.by_house_category(house_category_id) : House.all
 
           render_index(houses, {},
                        data_name: "List of Houses",

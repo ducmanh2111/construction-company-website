@@ -8,4 +8,6 @@ class House < ApplicationRecord
   validates :area, presence: true
 
   delegate :name, to: :house_category, prefix: true, allow_nil: true
+
+  scope :by_house_category, -> (house_category_id) { where(house_category_id: house_category_id) }
 end
