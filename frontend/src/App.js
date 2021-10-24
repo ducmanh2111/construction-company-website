@@ -5,8 +5,9 @@ import Navbar from "./components/Navbar";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import List from "./pages/List";
-import cateApi from "./service.api/category";
-import roomApi from "./service.api/room";
+import houseCategoriesApi from "./service.api/houseCategories";
+import roomCategoriesApi from "./service.api/roomCategories";
+
 
 function App() {
 
@@ -16,9 +17,9 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fetchedCategories = await cateApi.getAll()
+                const fetchedCategories = await houseCategoriesApi.getAll()
                 setCategories(fetchedCategories.data.house_categories)
-                const fetchedroomCategories = await roomApi.getAll()
+                const fetchedroomCategories = await roomCategoriesApi.getAll()
                 setRoomCategories(fetchedroomCategories.data.room_categories)
             } catch (error) {
                 console.log(error);
@@ -35,8 +36,10 @@ function App() {
             <div className="page-wrapper">
                 <Switch>
                     <Route exact path="/home" component={Home} />
-                    <Route exact path="/list" component={List} />
-                    <Route exact path="/detail" component={Detail} />
+                    <Route exact path="/houses" component={List} />
+                    <Route exact path="/rooms" component={List} />
+                    <Route exact path="/house" component={Detail} />
+                    <Route exact path="/room" component={Detail} />
                 </Switch>
                 <Footer />
             </div>

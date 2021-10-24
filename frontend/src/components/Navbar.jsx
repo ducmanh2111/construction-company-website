@@ -39,7 +39,7 @@ const Navbar = (props) => {
                 {categories &&
                   categories.map((cat) => (
                     <li key={cat.id}>
-                      <Link to="/list">{cat.name}</Link>
+                      <Link to={`/houses?house_cat_id=${cat.id}`}>{cat.name}</Link>
                     </li>
                   ))}
               </ul>
@@ -50,7 +50,7 @@ const Navbar = (props) => {
               {roomCategories &&
                   roomCategories.map((room) => (
                     <li key={room.id}>
-                      <Link to="/list">{room.name}</Link>
+                      <Link to={`/rooms?room_cat_id=${room.id}`}>{room.name}</Link>
                     </li>
                   ))}
               </ul>
