@@ -19,6 +19,7 @@ cp backend/config/database.yml.example backend/config/database.yml
   docker-compose up -d
   # Open new terminal
     docker-compose exec frontend bash
+    yarn install
     yarn start
   # Open new terminal
     docker-compose exec backend bash
