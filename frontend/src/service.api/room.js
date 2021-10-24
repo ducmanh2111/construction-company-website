@@ -1,8 +1,11 @@
-import axios from "axios"
+import axios from "axios";
 
 const roomApi = {
-    getAll: async () => {
-        return await axios.get(`http://localhost:4001//api/v1/user/room_categories`)
+    findByCatId: async (catId) => {
+        return await axios.get(`http://localhost:4001/api/v1/user/rooms?room_category_id=${catId}`)
+    },
+    findById: async (id) => {
+        return await axios.get(`http://localhost:4001/api/v1/user/rooms/${id}`)
     }
 }
 

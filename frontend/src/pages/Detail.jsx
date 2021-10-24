@@ -1,8 +1,108 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import houseApi from "../service.api/house";
+import roomApi from "../service.api/room";
 
 const Detail = () => {
-    return (
-        <>
+    const search = useLocation().search;
+    const houseId = new URLSearchParams(search).get('house_id');
+    const roomId = new URLSearchParams(search).get('room_id');
+
+    const [item, setItem] = useState(null);
+
+    useEffect(() => {
+        const fetch = async () => {
+            try {
+                if(houseId != null) {
+                    const fetchedHouse = await houseApi.findById(houseId);
+                    setItem(fetchedHouse.data.house)
+                } else {
+                    const fetchedRoom = await roomApi.findById(roomId);
+                    setItem(fetchedRoom.data.room)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        fetch()
+    }, [houseId, roomId])
+
+    const renderHouse = () => {
+        return (
+            item && <>
+                <header
+                    className="page-header full-image-background"
+                    style={{ backgroundImage: "url(assets/img/7.jpg)" }}
+                >
+                    <div className="container-fluid">
+                        <div className="col-md-10 col-md-offset-1">
+                            <div className="text-center">
+                                <h2 className="white">
+                                    {/* Room Indigo - $67/per night */}
+                                    {item.house_category_name}
+                                </h2>
+                            </div>
+                            <div className="header-intro">
+                                {/* Cosy Nights. Wood Fire. */}
+                                {item.name}
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section className="afterintro padding-bottom-50">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <h2>Description</h2>
+                                <p>
+                                    {/* This room is perfect for couples! Cabin sed
+                                    augue feugiat, accumsan quam vitae, mollis quam.
+                                    Praesent ultrices purus nec sollicitudin
+                                    hendrerit. Donec vel ex mauris. Aliquam pharetra
+                                    arcu in purus elementum venenatis. Praesent et
+                                    nibh tristique, posuere justo placerat,
+                                    scelerisque orci. */}
+                                    {item.description}
+                                </p>
+                            </div>
+                            <div className="col-md-6">
+                                <h2>Infomations</h2>
+                                <ul className="col-md-6 unstyle checklist">
+                                    <li>Area: {item.area} m2</li>
+                                    <li>Address: {item.address}</li>
+                                    <li>Floors: {item.floors}</li>
+                                </ul>
+                                <ul className="col-md-6 unstyle checklist">
+                                    <li>Year: {item.year}</li>
+                                    <li>Country: {item.country}</li>
+                                </ul>
+                            </div>
+                            <div className="col-md-3">
+                                <h2>
+                                    Status -{" "}
+                                    <span className="text-khaki">{item.status ? "DONE" : "UNDONE"}</span>
+                                </h2>
+                                <a href="contact.html">
+                                    <h2 className="actionbutton">
+                                        <span>
+                                            Call us at 0123 456 789 or contact online{" "}
+                                            <i className="fa fa-long-arrow-right" />
+                                        </span>
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
+        )
+    }
+
+    const renderRoom = () => {
+        return (
+            item && <>
             <header
                 className="page-header full-image-background"
                 style={{ backgroundImage: "url(assets/img/7.jpg)" }}
@@ -15,7 +115,8 @@ const Detail = () => {
                             </h2>
                         </div>
                         <div className="header-intro">
-                            Cosy Nights. Wood Fire.
+                            {/* Cosy Nights. Wood Fire. */}
+                            {item.area}
                             <br />
                             Comfort Stay.
                         </div>
@@ -25,46 +126,33 @@ const Detail = () => {
             <section className="afterintro padding-bottom-50">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4">
-                            <h2>Couple's Perfect</h2>
+                        <div className="col-md-3">
+                            <h2>Description</h2>
                             <p>
                                 This room is perfect for couples! Cabin sed
                                 augue feugiat, accumsan quam vitae, mollis quam.
                                 Praesent ultrices purus nec sollicitudin
-                                hendrerit. Donec vel ex mauris. Aliquam pharetra
-                                arcu in purus elementum venenatis. Praesent et
-                                nibh tristique, posuere justo placerat,
-                                scelerisque orci.
                             </p>
                         </div>
-                        <div className="col-md-4">
-                            <h2>Facilities</h2>
+                        <div className="col-md-6">
+                            <h2>Informations</h2>
                             <ul className="col-md-6 unstyle checklist">
-                                <li>Great Location</li>
-                                <li>All facilities</li>
-                                <li>Breakfast</li>
-                                <li>Baby Sitting</li>
-                                <li>Restaurant</li>
-                                <li>Camping</li>
+                                <li>Area: {item.area}</li>
+                                <li>Window: {item.window}</li>
                             </ul>
                             <ul className="col-md-6 unstyle checklist">
-                                <li>Internet</li>
-                                <li>TV</li>
-                                <li>Breakfast</li>
-                                <li>Baby Sitting</li>
-                                <li>Restaurant</li>
-                                <li>More</li>
+                                <li>Doors: {item.door}</li>
                             </ul>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <h2>
                                 Status -{" "}
-                                <span className="text-khaki">Available</span>
+                                <span className="text-khaki">DONE</span>
                             </h2>
                             <a href="contact.html">
                                 <h2 className="actionbutton">
                                     <span>
-                                        Call us at 202-555-0149 or book online{" "}
+                                        Call us at 0123 456 789 or contact online{" "}
                                         <i className="fa fa-long-arrow-right" />
                                     </span>
                                 </h2>
@@ -73,6 +161,17 @@ const Detail = () => {
                     </div>
                 </div>
             </section>
+        </>
+        )
+    }
+    
+    
+
+    return (
+        <>
+            {
+                houseId != null ? renderHouse() : renderRoom()
+            }
         </>
     );
 };
