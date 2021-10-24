@@ -11,6 +11,8 @@ class Room < ApplicationRecord
   delegate :name, to: :room_category, prefix: true, allow_nil: true
   delegate :name, to: :house, prefix: true, allow_nil: true
 
+  scope :by_room_category, -> (room_category_id) { where(room_category_id: room_category_id) }
+
   def name
     "#{house_name}-#{door_direction}"
   end
