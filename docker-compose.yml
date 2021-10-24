@@ -30,6 +30,7 @@ services:
       RAILS_ENV: development
       BUNDLE_PATH: /usr/local/bundle/gems
   db:
+    platform: linux/x86_64
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
