@@ -5,6 +5,8 @@ module Api
         def index
           rooms = params[:room_category_id] ? Room.by_room_category(params[:room_category_id]) : Room.all
 
+          rooms = rooms.where(house_id: params[:house_id]) if params[:house_id]
+
           render_index(rooms, {},
                        data_name: "List of Rooms",
                        serializer: ::V1::User::RoomSerializer)
