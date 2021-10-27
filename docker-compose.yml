@@ -1,6 +1,18 @@
 version: "3"
 
 services:
+  frontend-admin:
+    build: 
+      context: ./frontend-admin
+      dockerfile: Dockerfile
+    tty: true
+    depends_on:
+      - backend
+      - db
+    ports:
+      - "3001:8080"
+    volumes:
+      - ./frontend-admin:/frontend-admin
   frontend:
     build:
       context: ./frontend
