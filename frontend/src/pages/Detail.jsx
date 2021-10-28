@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
+import ListProducts from "../components/ListProducts";
 import houseApi from "../service.api/house";
 import roomApi from "../service.api/room";
 
@@ -9,6 +10,7 @@ const Detail = () => {
     const roomId = new URLSearchParams(search).get('room_id');
 
     const [item, setItem] = useState(null);
+    const [rooms, setRooms] = useState(null)
 
     useEffect(() => {
         const fetch = async () => {
@@ -16,6 +18,8 @@ const Detail = () => {
                 if(houseId != null) {
                     const fetchedHouse = await houseApi.findById(houseId);
                     setItem(fetchedHouse.data.house)
+                    const fetchedRooms = await roomApi.findByHouseId(houseId);
+                    setRooms(fetchedRooms.data.rooms)
                 } else {
                     const fetchedRoom = await roomApi.findById(roomId);
                     setItem(fetchedRoom.data.room)
@@ -33,7 +37,7 @@ const Detail = () => {
             item && <>
                 <header
                     className="page-header full-image-background"
-                    style={{ backgroundImage: "url(assets/img/7.jpg)" }}
+                    style={{ backgroundImage: "url(assets/img/GHO_4443.jpg)" }}
                 >
                     <div className="container-fluid">
                         <div className="col-md-10 col-md-offset-1">
@@ -96,6 +100,8 @@ const Detail = () => {
                         </div>
                     </div>
                 </section>
+                <h1>Rooms</h1>
+                <ListProducts rooms={rooms}/>
             </>
         )
     }

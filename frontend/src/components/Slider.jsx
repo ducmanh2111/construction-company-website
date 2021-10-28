@@ -12,7 +12,7 @@ const Slider = () => {
                     <div
                         className="slick-track"
                         role="listbox"
-                        style={{ opacity: 1, width: 3465 }}
+                        style={{ opacity: 1, width: '100%' }}
                     >
                         <div
                             className="item slick-slide slick-current slick-active"
@@ -22,7 +22,7 @@ const Slider = () => {
                             role="option"
                             aria-describedby="slick-slide00"
                             style={{
-                                width: 1155,
+                                width:'100%',
                                 position: "relative",
                                 left: 0,
                                 top: 0,
@@ -30,16 +30,20 @@ const Slider = () => {
                                 opacity: 1,
                             }}
                         >
-                            <div className="img-fill">
-                                <img src="assets/img/1.jpg" alt />
-                                <div className="info">
+                            <div className="img-fill" >
+                                <img src="assets/img/GHO_4443.jpg" style={styles.image} />
+                                <div className="info" style={{
+                                    display: "flex",
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}>
                                     <div className="container">
                                         <span className="line-1">
-                                            Peaceful escape from the city
+                                            Công ty chuyên thiết kế và thi công nhà
                                         </span>
-                                        <h1 className="line-2">Pension</h1>
+                                        <h1 className="line-2">Nhà đẹp</h1>
                                         <span className="line-3">
-                                            Mountain Cabin
+                                            Nhà đẹp. Co
                                         </span>
                                     </div>
                                 </div>
@@ -51,5 +55,12 @@ const Slider = () => {
         </>
     );
 };
+
+const styles = {
+    image: {
+        objectFit: 'cover',
+        objectPosition: 'center'
+    }
+}
 
 export default Slider;

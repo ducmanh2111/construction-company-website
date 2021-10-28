@@ -9,7 +9,7 @@ const Navbar = (props) => {
       {/* logo */}
       <div className="logo-box">
         <a href="index.html" className="logo logo-img">
-          <img src="assets/img/logo.png" alt="logo" />
+          <img src="assets/img/logo2.png" alt="logo" />
         </a>
       </div>
       {/* mobile */}
