@@ -36,7 +36,7 @@ const List = () => {
                 items.map((item, index) => (
                     <Link to={`/house?house_id=${item.id}`} key={index}>
                         <figure className="roombox">
-                            <img src="assets/img/1.jpg" alt="" />
+                            <img src="assets/img/GHO_4443.jpg" alt="" style={styles.image}/>
                             <figcaption>
                                 <div className="border one">
                                     <div></div>
@@ -44,8 +44,8 @@ const List = () => {
                                 <div className="border two">
                                     <div></div>
                                 </div>
-                                <h3>{'name: '+ item.name}</h3>
-                                <p>{'Description: '+ item.description}</p>
+                                <h3>{'Tên: '+ item.name}</h3>
+                                <p>{'Mô tả: '+ item.description}</p>
                             </figcaption>
                         </figure>
                     </Link>
@@ -59,7 +59,7 @@ const List = () => {
                 items.map((item, index) => (
                     <Link to={`/room?room_id=${item.id}`} key={index}>
                         <figure className="roombox">
-                            <img src="assets/img/1.jpg" alt="" />
+                            <img src="assets/img/GHO_4443.jpg" alt="" style={styles.image} />
                             <figcaption>
                                 <div className="border one">
                                     <div></div>
@@ -67,8 +67,8 @@ const List = () => {
                                 <div className="border two">
                                     <div></div>
                                 </div>
-                                <h3>{'Area: ' + item.area + ' m2'}</h3>
-                                <p>{'Door direction: ' + item.door_direction}</p>
+                                <h3>{'Tên: ' + item.house_name}</h3>
+                                <p>{'Hướng phòng: ' + item.door_direction}</p>
                             </figcaption>
                         </figure>
                     </Link>
@@ -85,5 +85,14 @@ const List = () => {
         </>
     );
 };
+
+const styles = {
+    image: {
+        width: '100%',
+        height: '360px',
+        objectFit: 'cover',
+        objectPosition: 'center'
+    }
+}
 
 export default List;

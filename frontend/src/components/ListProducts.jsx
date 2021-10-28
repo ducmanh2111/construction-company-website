@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ListProducts = () => {
+const ListProducts = (props) => {
+    const {rooms} = props
     const [items, setItems] = useState([1, 2, 3]);
 
     return (
         <>
             <div id="device" className="gridalicious">
-                {items &&
-                    items.map((item, index) => (
+                {rooms &&
+                    rooms.map((room, index) => (
                         <div
                             className="galcolumn"
                             id="item0tf4SX"
@@ -28,7 +30,7 @@ const ListProducts = () => {
                                     opacity: 1,
                                 }}
                             >
-                                <a href="blog-single.html">
+                                <Link to={`/room?room_id=${room.id}`}>
                                     <figure className="blogbox">
                                         <img
                                             src="assets/img/33.jpg"
@@ -41,8 +43,7 @@ const ListProducts = () => {
                                         <figcaption>
                                             <div>
                                                 <h2>
-                                                    Join nature, forget
-                                                    everything
+                                                    {room.house_name}
                                                 </h2>
                                             </div>
                                             <div>
@@ -51,7 +52,7 @@ const ListProducts = () => {
                                             </div>
                                         </figcaption>
                                     </figure>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

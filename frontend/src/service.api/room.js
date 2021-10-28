@@ -6,6 +6,9 @@ const roomApi = {
     },
     findById: async (id) => {
         return await axios.get(`http://localhost:4001/api/v1/user/rooms/${id}`)
+    },
+    findByHouseId: async (houseId) => {
+        return await axios.get(`http://localhost:4001/api/v1/user/rooms?house_id=${houseId}`)
     }
 }
 
