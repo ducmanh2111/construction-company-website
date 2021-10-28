@@ -35,7 +35,7 @@ module Api
       private
 
       def room_params
-        params.require(:room).permit(:room_category_id, :house_id, :area, :door, :window, :door_direction)
+        params.require(:room).permit(:room_category_id, :house_id, :area, :door, :window, :door_direction, :image)
       end
 
       def room

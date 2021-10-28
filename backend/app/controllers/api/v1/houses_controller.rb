@@ -37,7 +37,7 @@ module Api
 
       def house_params
         params.require(:house).permit(:house_category_id, :name, :address, :floors,
-                                      :year, :country, :status, :description, :area)
+                                      :year, :country, :status, :description, :area, :image)
       end
 
       def house

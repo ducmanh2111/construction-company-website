@@ -1,4 +1,6 @@
 class Room < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   belongs_to :room_category, optional: true
   belongs_to :house
 
@@ -8,6 +10,8 @@ class Room < ApplicationRecord
   validates :window, presence: true, numericality: true
   validates :door_direction, presence: true
 
+  has_one_attached :image
+
   delegate :name, to: :room_category, prefix: true, allow_nil: true
   delegate :name, to: :house, prefix: true, allow_nil: true
 
@@ -15,5 +19,9 @@ class Room < ApplicationRecord
 
   def name
     "#{house_name}-#{door_direction}"
+  end
+
+  def image_url
+    rails_blob_path(image, only_path: true) if image.attached?
   end
 end
