@@ -8,9 +8,7 @@ import List from "./pages/List";
 import houseCategoriesApi from "./service.api/houseCategories";
 import roomCategoriesApi from "./service.api/roomCategories";
 
-
 function App() {
-
     const [categories, setCategories] = useState([]);
     const [roomCategories, setRoomCategories] = useState([]);
 
