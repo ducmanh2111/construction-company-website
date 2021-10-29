@@ -1,0 +1,22 @@
+import axios from './axios';
+
+const houseApi = {
+  list: () => {
+    return axios.get(`/api/v1/user/houses`).then(res => res.data.houses);
+  },
+  post: (params) => {
+    return axios.post(`/api/v1/houses`, params
+    , {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(function (response) {
+      return response;
+    })
+    .catch(function (error) {
+      throw error;
+    });
+  }
+}
+
+export default houseApi;

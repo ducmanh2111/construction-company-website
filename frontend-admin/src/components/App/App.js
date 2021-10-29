@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import Dashboard from '../Dashboard/Dashboard';
+import Navbars from '../Navbar';
 import Login from '../Login/Login';
-import useToken from './useToken'
+import ListHouse from '../ListHouse/ListHouse';
+import useToken from './useToken';
 
 import './App.css';
 
@@ -15,12 +17,12 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <Navbars/>
       <BrowserRouter>
         <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+          <Route path="/dashboard"><Dashboard /></Route>
+          <Route path="/houses"><ListHouse /></Route>
+          <Route path="/"><ListHouse /></Route>
         </Switch>
       </BrowserRouter>
     </div>
