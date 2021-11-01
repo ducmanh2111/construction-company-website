@@ -30,6 +30,7 @@ export default function ListHouse() {
             <th>Status</th>
             <th>Images</th>
             <th>Details</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody className="text-center">
