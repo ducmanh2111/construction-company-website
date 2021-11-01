@@ -19,8 +19,8 @@ export default function Navbars() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Categories" id="categories">
-                <NavDropdown.Item href="/room_category">Room Category</NavDropdown.Item>
-                <NavDropdown.Item href="/house_category">House Category</NavDropdown.Item>
+                <NavDropdown.Item href="/room_categories">Room Category</NavDropdown.Item>
+                <NavDropdown.Item href="/house_categories">House Category</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/houses">House</Nav.Link>
               <Nav.Link href="/rooms">Room</Nav.Link>
