@@ -33,7 +33,7 @@ const ListProducts = (props) => {
                                 <Link to={`/room?room_id=${room.id}`}>
                                     <figure className="blogbox">
                                         <img
-                                            src="assets/img/33.jpg"
+                                            src={`http://localhost:4001/${room.image_url}`}
                                             alt=""
                                             style={{
                                                 width: "100%",

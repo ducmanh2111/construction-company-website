@@ -33,7 +33,7 @@ function App() {
             <Navbar categories={categories} roomCategories={roomCategories}/>
             <div className="page-wrapper">
                 <Switch>
-                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/" component={Home} />
                     <Route exact path="/houses" component={List} />
                     <Route exact path="/rooms" component={List} />
                     <Route exact path="/house" component={Detail} />

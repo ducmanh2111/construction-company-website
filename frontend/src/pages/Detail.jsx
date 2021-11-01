@@ -35,9 +35,10 @@ const Detail = () => {
     const renderHouse = () => {
         return (
             item && <>
+            {console.log(item.image_url)}
                 <header
                     className="page-header full-image-background"
-                    style={{ backgroundImage: "url(assets/img/GHO_4443.jpg)" }}
+                    style={{ backgroundImage: `url(http://localhost:4001/${item.image_url[0]})` }}
                 >
                     <div className="container-fluid">
                         <div className="col-md-10 col-md-offset-1">
@@ -111,7 +112,7 @@ const Detail = () => {
             item && <>
             <header
                 className="page-header full-image-background"
-                style={{ backgroundImage: "url(assets/img/7.jpg)" }}
+                style={{ backgroundImage: `url(http://localhost:4001/${item.image_url[0]})` }}
             >
                 <div className="container-fluid">
                     <div className="col-md-10 col-md-offset-1">
@@ -171,8 +172,6 @@ const Detail = () => {
         )
     }
     
-    
-
     return (
         <>
             {
