@@ -4,6 +4,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import Navbars from '../Navbar';
 import Login from '../Login/Login';
 import ListHouse from '../ListHouse/ListHouse';
+import ListRoom from '../ListRoom/ListRoom';
 import useToken from './useToken';
 
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
         <Switch>
           <Route path="/dashboard"><Dashboard /></Route>
           <Route path="/houses"><ListHouse /></Route>
+          <Route path="/rooms"><ListRoom /></Route>
           <Route path="/"><ListHouse /></Route>
         </Switch>
       </BrowserRouter>
