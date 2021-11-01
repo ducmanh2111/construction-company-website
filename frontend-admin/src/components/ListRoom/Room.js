@@ -4,7 +4,6 @@ import { Image } from 'react-bootstrap';
 
 export default function Room(props) {
   const { room } = props;
-  const API_HOST = "http://localhost:4001";
 
   return (<>
     <tr>
@@ -16,10 +15,10 @@ export default function Room(props) {
       <td>{room.door_direction}</td>
       <td>{room.window}</td>
       <td>{room.image_url.map((url, index) => {
-        return (<Image src={`${API_HOST}${url}`} thumbnail key={index} width="50" height="50"/>);
+        return (<Image src={`${process.env.REACT_APP_API_HOST}${url}`} thumbnail key={index} width="50" height="50"/>);
       })}</td>
       <td>
-        <Link to={`/api/v1/user/rooms/${room.id}`}>Show</Link>
+        <Link to={`/rooms/${room.id}/edit`}>Show</Link>
       </td>
     </tr>
   </>);

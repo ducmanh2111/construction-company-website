@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_HOST = "http://localhost:4001"
+require('dotenv')
 const TOKEN_KEY = 'token'
 
 function getToken() {
@@ -11,7 +10,7 @@ function getToken() {
 }
 
 axios.interceptors.request.use(function(config) {
-  config.url = `${API_HOST}${config.url}`;
+  config.url = `${process.env.REACT_APP_API_HOST}${config.url}`;
   if (!config.url.includes('/login')) {
     config.headers.Authorization = `Bearer ${getToken()}`;
   }
