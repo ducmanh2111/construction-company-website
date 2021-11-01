@@ -51,7 +51,7 @@ export default function NewHouse() {
     });
 
     for (let i = 0 ; i < images.length ; i++) {
-      formData.append(`house[image]`, images[i]);
+      formData.append(`house[image][]`, images[i]);
     }
 
     houseApi.post(formData).then(res => {
