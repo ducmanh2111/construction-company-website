@@ -28,6 +28,7 @@ export default function ListHouse() {
             <th>House Name</th>
             <th>House Address</th>
             <th>Status</th>
+            <th>Images</th>
             <th>Details</th>
           </tr>
         </thead>
