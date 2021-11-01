@@ -15,7 +15,7 @@ export default function House(props) {
         return (<Image src={`${process.env.REACT_APP_API_HOST}${url}`} thumbnail key={index} width="50" height="50"/>);
       })}</td>
       <td>
-        <Link to={`/api/v1/user/houses/${house.id}`}>Show</Link>
+        <Link to={`/houses/${house.id}/edit`}>Show</Link>
       </td>
     </tr>
   </>);
