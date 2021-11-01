@@ -9,7 +9,7 @@ class House < ApplicationRecord
   validates :floors, presence: true
   validates :area, presence: true
 
-  has_one_attached :image
+  has_many_attached :image
 
   delegate :name, to: :house_category, prefix: true, allow_nil: true
 

@@ -48,9 +48,8 @@ export default function NewRoom() {
     forEach(form, function(value, key) {
       formData.append(`room[${key}]`, value);
     });
-
     for (let i = 0 ; i < images.length ; i++) {
-      formData.append(`room[image]`, images[i]);
+      formData.append(`room[image][]`, images[i]);
     }
 
     roomApi.post(formData).then(res => {
