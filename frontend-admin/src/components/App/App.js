@@ -7,6 +7,7 @@ import ListHouse from '../ListHouse/ListHouse';
 import ListRoom from '../ListRoom/ListRoom';
 import NewHouse from '../ListHouse/NewHouse';
 import NewRoom from '../ListRoom/newRoom';
+import ListHouseCategory from '../ListHouseCategory/ListHouseCategory';
 import useToken from './useToken';
 
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/dashboard"><Dashboard /></Route>
           <Route path="/houses/new"><NewHouse /></Route>
           <Route path="/rooms/new"><NewRoom /></Route>
+          <Route path="/house_categories"><ListHouseCategory /></Route>
           <Route path="/houses"><ListHouse /></Route>
           <Route path="/rooms"><ListRoom /></Route>
           <Route path="/"><ListHouse /></Route>
