@@ -32,6 +32,7 @@ export default function ListRoom() {
             <th>Number of Doors</th>
             <th>Door direction</th>
             <th>Number of Windows</th>
+            <th>Images</th>
             <th>Details</th>
           </tr>
         </thead>
