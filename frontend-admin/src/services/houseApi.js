@@ -31,6 +31,9 @@ const houseApi = {
     .catch(function (error) {
       throw error;
     });
+  },
+  delete: (id) => {
+    return axios.delete(`/api/v1/houses/${id}`).then(res => res);
   }
 }
 
