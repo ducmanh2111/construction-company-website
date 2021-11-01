@@ -16,6 +16,9 @@ const roomApi = {
     .catch(function (error) {
       throw error;
     });
+  },
+  get: (id) => {
+    return axios.get(`/api/v1/user/rooms/${id}`).then(res => res.data.room);
   }
 }
 
