@@ -31,6 +31,9 @@ const roomApi = {
     .catch(function (error) {
       throw error;
     });
+  },
+  delete: (id) => {
+    return axios.delete(`/api/v1/rooms/${id}`).then(res => res);
   }
 }
 

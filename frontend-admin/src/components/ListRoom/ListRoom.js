@@ -34,6 +34,7 @@ export default function ListRoom() {
             <th>Number of Windows</th>
             <th>Images</th>
             <th>Details</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody className="text-center">

@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Image } from 'react-bootstrap';
+import { Image, Button } from 'react-bootstrap';
+import roomApi from '../../services/roomApi';
 
 export default function Room(props) {
   const { room } = props;
+
+  const deleteRoom = (id) => {
+    roomApi.delete(id).then(data => {
+      window.location.reload();
+    })
+  }
 
   return (<>
     <tr>
@@ -18,7 +25,12 @@ export default function Room(props) {
         return (<Image src={`${process.env.REACT_APP_API_HOST}${url}`} thumbnail key={index} width="50" height="50"/>);
       })}</td>
       <td>
-        <Link to={`/rooms/${room.id}/edit`}>Show</Link>
+        <Link to={`/rooms/${room.id}/edit`}>
+          <Button variant="outline-primary">Show</Button>{' '}
+        </Link>
+      </td>
+      <td>
+        <Button variant="outline-danger" onClick={() => deleteRoom(room.id)}>Delete</Button>{' '}
       </td>
     </tr>
   </>);
