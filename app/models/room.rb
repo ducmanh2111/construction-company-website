@@ -10,7 +10,7 @@ class Room < ApplicationRecord
   validates :window, presence: true, numericality: true
   validates :door_direction, presence: true
 
-  has_one_attached :image
+  has_many_attached :image
 
   delegate :name, to: :room_category, prefix: true, allow_nil: true
   delegate :name, to: :house, prefix: true, allow_nil: true
