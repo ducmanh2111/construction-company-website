@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -6,23 +7,23 @@ const Footer = () => {
             <div className="bottomfooter">
                 <div className="col-md-4">
                     © Template by{" "}
-                    <a href="https://www.wowthemes.net/premium-themes-templates/">
-                        WowThemes.net
-                    </a>
+                    <Link to="#">
+                        Nhà đẹp
+                    </Link>
                 </div>
                 <div className="col-md-4">
-                    <i className="fa fa-phone" /> Book Now 202-555-0114
+                    <i className="fa fa-phone" /> Liên hệ ngay 0123 456 789
                     <br />
                     <i className="fa fa-envelope" />{" "}
                     <a href="mailto:donotsendthisemail@gmail.com">
-                        hello@pension.com
+                        nhadep@gmail.com
                     </a>
                 </div>
                 <div className="col-md-4">
                     <i className="fa fa-map-marker" />
-                    940 North Georgia, Blue Ridge
+                    1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội
                     <br />
-                    Mountain Resorts Cabin
+                    Nhà đẹp - Đại học Bách Khoa Hà Nội
                 </div>
                 <div className="clearfix"></div>
             </div>

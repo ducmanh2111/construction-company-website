@@ -33,11 +33,11 @@ const ListProducts = (props) => {
                                 <Link to={`/room?room_id=${room.id}`}>
                                     <figure className="blogbox">
                                         <img
-                                            src={`http://localhost:4001/${room.image_url}`}
+                                            src={`${process.env.REACT_APP_API_HOST}/${room.image_url}`}
                                             alt=""
                                             style={{
                                                 width: "100%",
-                                                height: "auto",
+                                                height: "300px",
                                             }}
                                         />
                                         <figcaption>

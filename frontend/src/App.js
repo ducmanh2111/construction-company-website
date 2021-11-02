@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import List from "./pages/List";
@@ -34,6 +35,7 @@ function App() {
             <div className="page-wrapper">
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/about" component={About}/>
                     <Route exact path="/houses" component={List} />
                     <Route exact path="/rooms" component={List} />
                     <Route exact path="/house" component={Detail} />

@@ -8,9 +8,9 @@ const Navbar = (props) => {
     <nav className="activ">
       {/* logo */}
       <div className="logo-box">
-        <a href="index.html" className="logo logo-img">
+        <Link to="/" className="logo logo-img">
           <img src="assets/img/logo3.jpeg" alt="logo" />
-        </a>
+        </Link>
       </div>
       {/* mobile */}
       <button
@@ -28,10 +28,7 @@ const Navbar = (props) => {
               <Link to="/">home</Link>
             </li>
             <li>
-              <a href="about.html">about</a>
-            </li>
-            <li>
-              <a href="contact.html">contact</a>
+              <Link to="/about">about</Link>
             </li>
             <li className="submenu">
               <a href="#">Nhà</a>

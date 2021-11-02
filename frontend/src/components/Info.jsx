@@ -8,10 +8,7 @@ const Info = () => {
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1 text-center">
                             <h2 className="introtext">
-                                Located in Blue Ridge Mountains, about 300 feet
-                                from lake. "Silvae" is your far from city ideal
-                                holiday place. Come for a good fresh air and
-                                have a well deserved rest!
+                            Tin tưởng vào sứ mệnh: “Trang hoàng không gian sống đầy đủ – tiện nghi – thẩm mỹ nhằm đáp ứng nhu cầu sử dụng. Kết hợp giải pháp thi công hiện đại, ứng dụng vật liệu xanh – thông minh, đảm bảo tiêu chuẩn, góp phần tạo nên chất lượng sống đẳng cấp hợp thời đại và theo đúng tiêu chí của khách hàng”
                             </h2>
                         </div>
                     </div>
