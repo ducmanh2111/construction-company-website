@@ -26,6 +26,7 @@ export default function ListHouse() {
           <tr className="text-center">
             <th>ID</th>
             <th>House Name</th>
+            <th>House Type</th>
             <th>House Address</th>
             <th>Status</th>
             <th>Images</th>
