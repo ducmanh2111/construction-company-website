@@ -25,10 +25,10 @@ const Navbar = (props) => {
         <div id="dl-menu" className="dl-menuwrapper">
           <ul className="dl-menu dl-menuopen">
             <li>
-              <Link to="/">home</Link>
+              <Link to="/">Trang chủ</Link>
             </li>
             <li>
-              <Link to="/about">about</Link>
+              <Link to="/about">Thông tin</Link>
             </li>
             <li className="submenu">
               <a href="#">Nhà</a>

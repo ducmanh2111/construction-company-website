@@ -31,7 +31,7 @@ const Slider = () => {
                             }}
                         >
                             <div className="img-fill" >
-                                <img src="assets/img/GHO_4443.jpg" style={styles.image} />
+                                <img src="assets/img/cover_1.jpg" style={styles.image} />
                                 <div className="info" style={{
                                     display: "flex",
                                     justifyContent: 'center',
@@ -41,9 +41,9 @@ const Slider = () => {
                                         <span className="line-1">
                                             Công ty chuyên thiết kế và thi công nhà
                                         </span>
-                                        <h1 className="line-2">Nhà đẹp</h1>
+                                        <h1 className="line-2">House Design</h1>
                                         <span className="line-3">
-                                            Nhà đẹp. Co
+                                            House Design. Co
                                         </span>
                                     </div>
                                 </div>

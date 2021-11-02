@@ -43,12 +43,11 @@ const ListProducts = (props) => {
                                         <figcaption>
                                             <div>
                                                 <h2>
-                                                    {room.house_name}
+                                                    {`${room.room_category_name} ${room.house_name}`}
                                                 </h2>
                                             </div>
                                             <div>
-                                                <h3>Life Stories, People</h3>
-                                                <h3>Read more</h3>
+                                                <h3>Xem thông tin</h3>
                                             </div>
                                         </figcaption>
                                     </figure>
