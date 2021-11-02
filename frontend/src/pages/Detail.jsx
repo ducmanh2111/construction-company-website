@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
+import Gallery from "../components/Gallery";
 import ListProducts from "../components/ListProducts";
 import houseApi from "../service.api/house";
 import roomApi from "../service.api/room";
@@ -166,6 +167,9 @@ const Detail = () => {
                     </div>
                 </div>
             </section>
+            <h1>Gallery</h1>
+            <br></br>
+            <Gallery images={item.image_url}/>
         </>
         )
     }
