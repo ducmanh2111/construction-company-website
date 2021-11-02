@@ -71,7 +71,8 @@ export default function NewHouse() {
       <Form onSubmit={submitForm}>
         <Form.Group as={Col} controlId="formGridHouseType">
           <Form.Label>House Type</Form.Label>
-          <Form.Select defaultValue="1" onChange={(e) => setHouseCategoryId(e.target.value)}>
+          <Form.Select onChange={(e) => setHouseCategoryId(e.target.value)}>
+            <option>Select House type</option>
             {houseCategories.map(house_category => {
               return (<option value={house_category.id} key={house_category.id}> {house_category.name} </option>);
             })}

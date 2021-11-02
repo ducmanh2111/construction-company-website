@@ -16,6 +16,7 @@ export default function House(props) {
     <tr>
       <td>{house.id}</td>
       <td>{house.name}</td>
+      <td>{house.house_category_name}</td>
       <td>{house.address}</td>
       <td>{house.status ? 'Done' : 'Inprogress'}</td>
       <td>{house.image_url.map((url, index) => {

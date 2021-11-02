@@ -68,7 +68,8 @@ export default function NewRoom() {
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridRoomType">
             <Form.Label>Room Type</Form.Label>
-            <Form.Select defaultValue="1" onChange={(e) => setRoomCategoryId(e.target.value)}>
+            <Form.Select onChange={(e) => setRoomCategoryId(e.target.value)}>
+              <option>Select room type</option>
               {roomCategories.map(room_category => {
                 return (<option value={room_category.id} key={room_category.id}> {room_category.name} </option>);
               })}
@@ -77,7 +78,8 @@ export default function NewRoom() {
 
           <Form.Group as={Col} controlId="formGridHouseName">
             <Form.Label>House Name</Form.Label>
-            <Form.Select defaultValue="1" onChange={(e) => setHouseId(e.target.value)}>
+            <Form.Select onChange={(e) => setHouseId(e.target.value)}>
+              <option>Select house</option>
               {houses.map(house => {
                 return (<option value={house.id} key={house.id}> {house.name} </option>);
               })}

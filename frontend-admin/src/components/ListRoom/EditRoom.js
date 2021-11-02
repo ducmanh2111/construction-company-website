@@ -36,7 +36,7 @@ export default function EditRoom() {
       setHouseId(data.house_id);
       setWindows(data.window);
       setArea(data.area);
-      setImages(data.image_url);
+      setImageUrl(data.image_url);
 
     });
     roomCategoryApi.list().then(data => {
@@ -62,6 +62,7 @@ export default function EditRoom() {
     forEach(form, function(value, key) {
       formData.append(`room[${key}]`, value);
     });
+
     for (let i = 0 ; i < images.length ; i++) {
       formData.append(`room[image][]`, images[i]);
     }
@@ -150,7 +151,7 @@ export default function EditRoom() {
 
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formFileMultiple" className="mb-3">
-            <Form.Label>House Image</Form.Label>
+            <Form.Label>Room Image</Form.Label>
             <Form.Control type="file" multiple onChange={(e) => handleFile(e)}/>
           </Form.Group>
         </Row>
