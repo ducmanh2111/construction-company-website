@@ -36,7 +36,7 @@ const List = () => {
                 items.map((item, index) => (
                     <Link to={`/house?house_id=${item.id}`} key={index}>
                         <figure className="roombox">
-                            <img src="assets/img/GHO_4443.jpg" alt="" style={styles.image}/>
+                            <img src={`${process.env.REACT_APP_API_HOST}/${item.image_url[0]}`} alt="" style={styles.image}/>
                             <figcaption>
                                 <div className="border one">
                                     <div></div>
@@ -59,7 +59,7 @@ const List = () => {
                 items.map((item, index) => (
                     <Link to={`/room?room_id=${item.id}`} key={index}>
                         <figure className="roombox">
-                            <img src="assets/img/GHO_4443.jpg" alt="" style={styles.image} />
+                            <img src={`${process.env.REACT_APP_API_HOST}/${item.image_url[0]}`} alt="" style={styles.image} />
                             <figcaption>
                                 <div className="border one">
                                     <div></div>

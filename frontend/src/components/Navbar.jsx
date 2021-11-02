@@ -8,9 +8,9 @@ const Navbar = (props) => {
     <nav className="activ">
       {/* logo */}
       <div className="logo-box">
-        <a href="index.html" className="logo logo-img">
-          <img src="assets/img/logo2.png" alt="logo" />
-        </a>
+        <Link to="/" className="logo logo-img">
+          <img src="assets/img/logo3.jpeg" alt="logo" />
+        </Link>
       </div>
       {/* mobile */}
       <button
@@ -25,13 +25,10 @@ const Navbar = (props) => {
         <div id="dl-menu" className="dl-menuwrapper">
           <ul className="dl-menu dl-menuopen">
             <li>
-              <Link to="/home">home</Link>
+              <Link to="/">home</Link>
             </li>
             <li>
-              <a href="about.html">about</a>
-            </li>
-            <li>
-              <a href="contact.html">contact</a>
+              <Link to="/about">about</Link>
             </li>
             <li className="submenu">
               <a href="#">Nhà</a>

@@ -35,9 +35,10 @@ const Detail = () => {
     const renderHouse = () => {
         return (
             item && <>
+            {console.log(item.image_url)}
                 <header
                     className="page-header full-image-background"
-                    style={{ backgroundImage: "url(assets/img/GHO_4443.jpg)" }}
+                    style={{ backgroundImage: `url(${process.env.REACT_APP_API_HOST}/${item.image_url[0]})` }}
                 >
                     <div className="container-fluid">
                         <div className="col-md-10 col-md-offset-1">
@@ -111,20 +112,18 @@ const Detail = () => {
             item && <>
             <header
                 className="page-header full-image-background"
-                style={{ backgroundImage: "url(assets/img/7.jpg)" }}
+                style={{ backgroundImage: `url(${process.env.REACT_APP_API_HOST}/${item.image_url[0]})` }}
             >
                 <div className="container-fluid">
                     <div className="col-md-10 col-md-offset-1">
                         <div className="text-center">
                             <h2 className="white">
-                                Room Indigo - $67/per night
+                                {item.room_category_name}
                             </h2>
                         </div>
                         <div className="header-intro">
                             {/* Cosy Nights. Wood Fire. */}
-                            {item.area}
-                            <br />
-                            Comfort Stay.
+                            {item.house_name}
                         </div>
                     </div>
                 </div>
@@ -171,8 +170,6 @@ const Detail = () => {
         )
     }
     
-    
-
     return (
         <>
             {
