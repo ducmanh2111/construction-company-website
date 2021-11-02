@@ -1,6 +1,14 @@
 module Api
   module V1
     class RoomCategoriesController < BaseController
+      def index
+        room_categories = RoomCategory.all
+
+        render_index(room_categories, {},
+                     data_name: "List of Room Categories",
+                     serializer: ::V1::RoomCategorySerializer)
+      end
+
       def create
         room_category = RoomCategory.new
         if room_category.update(room_category_params)

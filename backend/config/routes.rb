@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, defaults: { format: :json } do
-      resources :house_categories, only: [:create, :show, :update, :destroy]
+      resources :house_categories, only: [:index, :create, :show, :update, :destroy]
       resources :houses, only: [:create, :show, :update, :destroy]
-      resources :room_categories, only: [:create, :show, :update, :destroy]
+      resources :room_categories, only: [:index, :create, :show, :update, :destroy]
       resources :rooms, only: [:create, :show, :update, :destroy]
 
       namespace :user do
