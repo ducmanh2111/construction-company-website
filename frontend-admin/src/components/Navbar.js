@@ -1,7 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown, Button } from 'react-bootstrap';
 
 export default function Navbars() {
+  const signOut = () => {
+    sessionStorage.clear();
+    window.location.href = '/';
+  }
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -24,6 +29,9 @@ export default function Navbars() {
               </NavDropdown>
               <Nav.Link href="/houses">House</Nav.Link>
               <Nav.Link href="/rooms">Room</Nav.Link>
+            </Nav>
+            <Nav>
+              <Button variant="light" onClick={e => signOut()}>Sign out</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
