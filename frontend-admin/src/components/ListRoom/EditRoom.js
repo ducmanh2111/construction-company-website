@@ -14,8 +14,6 @@ export default function EditRoom() {
 
   const [door, setDoor] = useState(0);
   const [doorDirection, setDoorDirection] = useState('');
-  const [houseName, setHouseName] = useState('');
-  const [roomCategoryName, setRoomCategoryName] = useState('');
   const [imageUrl, setImageUrl] = useState([]);
   const [roomCategoryId, setRoomCategoryId] = useState(1);
   const [houseId, setHouseId] = useState(1);
@@ -29,8 +27,6 @@ export default function EditRoom() {
     roomApi.get(id).then(data => {
       setDoor(data.door);
       setDoorDirection(data.door_direction);
-      setHouseName(data.house_name);
-      setRoomCategoryName(data.room_category_name);
       setImageUrl(data.image_url);
       setRoomCategoryId(data.room_category_id);
       setHouseId(data.house_id);

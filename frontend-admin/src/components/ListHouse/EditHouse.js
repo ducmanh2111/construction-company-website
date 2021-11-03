@@ -14,7 +14,6 @@ export default function EditHouse() {
 
   const [houseCategories, setHouseCategories] = useState([]);
   const [houseCategoryId, setHouseCategoryId] = useState(1);
-  const [houseCategoryName, setHouseCategoryName] = useState('');
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [country, setCountry] = useState('');
@@ -29,7 +28,6 @@ export default function EditHouse() {
   useEffect(() => {
     houseApi.get(id).then(data => {
       setHouseCategoryId(data.house_category_id);
-      setHouseCategoryName(data.house_category_name);
       setName(data.name);
       setArea(data.area);
       setAddress(data.address);
