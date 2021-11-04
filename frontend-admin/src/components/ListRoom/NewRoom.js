@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { Form, Col, Row, Button, FloatingLabel, Container } from 'react-bootstrap';
 import { forEach } from 'lodash';
 import roomApi from '../../services/roomApi';
@@ -6,6 +7,8 @@ import roomCategoryApi from '../../services/roomCategoryApi';
 import houseApi from '../../services/houseApi';
 
 export default function NewRoom() {
+  const history = useHistory();
+
   const [roomCategories, setRoomCategories] = useState([]);
   const [roomCategoryId, setRoomCategoryId] = useState(1);
   const [houses, setHouses] = useState([]);
@@ -51,7 +54,7 @@ export default function NewRoom() {
     }
 
     roomApi.post(formData).then(res => {
-      window.location.reload();
+      history.push(`/rooms`);
     }).catch(error => {
       const messages = error.response.data.meta.errors;
       const fullMessage = [];

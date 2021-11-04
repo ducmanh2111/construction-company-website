@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
 import { forEach } from 'lodash';
 import houseApi from '../../services/houseApi';
@@ -6,6 +7,7 @@ import houseApi from '../../services/houseApi';
 import houseCategoryApi from '../../services/houseCategoryApi';
 
 export default function NewHouse() {
+  const history = useHistory();
 
   const [houseCategories, setHouseCategories] = useState([]);
   const [houseCategoryId, setHouseCategoryId] = useState(1);
@@ -55,7 +57,7 @@ export default function NewHouse() {
     }
 
     houseApi.post(formData).then(res => {
-      window.location.reload();
+      history.push('/houses');
     }).catch(error => {
       const messages = error.response.data.meta.errors;
       const fullMessage = [];

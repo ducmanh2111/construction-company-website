@@ -25,8 +25,8 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Navbars/>
       <BrowserRouter>
+        <Navbars/>
         <Switch>
           <Route path="/dashboard"><Dashboard /></Route>
           <Route path="/houses/new"><NewHouse /></Route>
