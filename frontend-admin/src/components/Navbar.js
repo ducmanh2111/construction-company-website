@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function Navbars() {
   const signOut = () => {
@@ -24,11 +25,15 @@ export default function Navbars() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Categories" id="categories">
-                <NavDropdown.Item href="/room_categories">Room Category</NavDropdown.Item>
-                <NavDropdown.Item href="/house_categories">House Category</NavDropdown.Item>
+                <NavDropdown.Item><Link className="text-decoration-none text-muted" to="/room_categories" >Room Category</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link className="text-decoration-none text-muted" to="/house_categories">House Category</Link></NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/houses">House</Nav.Link>
-              <Nav.Link href="/rooms">Room</Nav.Link>
+              <Nav.Link>
+                <Link className="text-decoration-none text-muted" to="/houses">House</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link className="text-decoration-none text-muted" to="/rooms">Room</Link>
+              </Nav.Link>
             </Nav>
             <Nav>
               <Button variant="light" onClick={e => signOut()}>Sign out</Button>
