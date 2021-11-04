@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { Image, Button } from 'react-bootstrap';
 import houseApi from '../../services/houseApi';
 
 export default function House(props) {
+  const history = useHistory();
+
   const { house } = props;
 
   const deleteHouse = (id) => {
     houseApi.delete(id).then(data => {
-      window.location.reload();
+      history.push('houses');
     })
   }
 
