@@ -4,11 +4,11 @@ import { Image, Button } from 'react-bootstrap';
 import houseApi from '../../services/houseApi';
 
 export default function House(props) {
-  const { house, reload } = props;
+  const { house, reload, setReload } = props;
 
   const deleteHouse = (id) => {
     houseApi.delete(id).then(data => {
-      reload(true);
+      setReload(!reload);
     })
   }
 

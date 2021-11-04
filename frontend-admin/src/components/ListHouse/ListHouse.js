@@ -37,7 +37,7 @@ export default function ListHouse() {
         </thead>
         <tbody className="text-center">
           { houses.map((house, index) =>
-            <House house={ house } key={ index } reload={setReload}/>
+            <House house={ house } key={ index } reload={reload} setReload={setReload}/>
           )}
         </tbody>
       </Table>
