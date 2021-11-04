@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 
 export default function ListRoom() {
   const [rooms, setRooms] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     roomApi.list().then(data => {
       setRooms(data);
     })
-  },[]);
+  },[reload]);
 
 
   return (<div>
@@ -39,7 +40,7 @@ export default function ListRoom() {
         </thead>
         <tbody className="text-center">
           { rooms.map((room, index) =>
-            <Room room={ room } key={ index }/>
+            <Room room={ room } key={ index } reload={setReload}/>
           )}
         </tbody>
       </Table>

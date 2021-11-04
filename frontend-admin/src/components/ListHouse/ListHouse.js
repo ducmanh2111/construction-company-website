@@ -6,12 +6,13 @@ import houseApi from '../../services/houseApi';
 
 export default function ListHouse() {
   const [houses, setHouses] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     houseApi.list().then(data => {
       setHouses(data);
     })
-  },[]);
+  },[reload]);
 
   return (<div>
     <Container className="mt-5">
@@ -36,7 +37,7 @@ export default function ListHouse() {
         </thead>
         <tbody className="text-center">
           { houses.map((house, index) =>
-            <House house={ house } key={ index }/>
+            <House house={ house } key={ index } reload={setReload}/>
           )}
         </tbody>
       </Table>
