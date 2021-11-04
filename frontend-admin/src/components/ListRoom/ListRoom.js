@@ -40,7 +40,7 @@ export default function ListRoom() {
         </thead>
         <tbody className="text-center">
           { rooms.map((room, index) =>
-            <Room room={ room } key={ index } reload={setReload}/>
+            <Room room={ room } key={ index } reload={reload} setReload={setReload}/>
           )}
         </tbody>
       </Table>

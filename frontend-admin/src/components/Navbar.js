@@ -25,8 +25,16 @@ export default function Navbars() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Categories" id="categories">
-                <NavDropdown.Item><Link className="text-decoration-none text-muted" to="/room_categories" >Room Category</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link className="text-decoration-none text-muted" to="/house_categories">House Category</Link></NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link className="text-decoration-none text-muted" to="/room_categories" >
+                          Room Category
+                    </Link>
+                  </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link className="text-decoration-none text-muted" to="/house_categories">
+                    House Category
+                  </Link>
+                </NavDropdown.Item>
               </NavDropdown>
               <NavLink className="text-decoration-none text-muted my-2 mx-2" to="/houses">House</NavLink>
               <NavLink className="text-decoration-none text-muted my-2 mx-2" to="/rooms">Room</NavLink>

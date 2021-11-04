@@ -4,11 +4,11 @@ import { Image, Button } from 'react-bootstrap';
 import roomApi from '../../services/roomApi';
 
 export default function Room(props) {
-  const { room, reload } = props;
+  const { room, reload, setReload } = props;
 
   const deleteRoom = (id) => {
     roomApi.delete(id).then(data => {
-      reload(true);
+      setReload(!reload);
     })
   }
 

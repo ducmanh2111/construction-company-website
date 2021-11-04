@@ -11,6 +11,7 @@ import ListHouseCategory from '../ListHouseCategory/ListHouseCategory';
 import ListRoomCategory from '../ListRoomCategory/ListRoomCategory';
 import EditRoom from '../ListRoom/EditRoom';
 import EditHouse from '../ListHouse/EditHouse';
+import NewHouseCategory from '../ListHouseCategory/NewHouseCategory';
 
 import useToken from './useToken';
 
@@ -29,14 +30,15 @@ function App() {
         <Navbars/>
         <Switch>
           <Route path="/dashboard"><Dashboard /></Route>
-          <Route path="/houses/new"><NewHouse /></Route>
+          <Route path="/house_categories/new"><NewHouseCategory /></Route>
+          <Route exac path="/houses/new"><NewHouse /></Route>
           <Route path="/houses/:id/edit"><EditHouse /></Route>
-          <Route path="/rooms/new"><NewRoom /></Route>
+          <Route exac path="/rooms/new"><NewRoom /></Route>
           <Route path="/rooms/:id/edit"><EditRoom /></Route>
-          <Route path="/house_categories"><ListHouseCategory /></Route>
-          <Route path="/room_categories"><ListRoomCategory /></Route>
-          <Route path="/houses"><ListHouse /></Route>
-          <Route path="/rooms"><ListRoom /></Route>
+          <Route exac path="/house_categories"><ListHouseCategory /></Route>
+          <Route exac path="/room_categories"><ListRoomCategory /></Route>
+          <Route exac path="/houses"><ListHouse /></Route>
+          <Route exac path="/rooms"><ListRoom /></Route>
           <Route path="/"><ListHouse /></Route>
         </Switch>
       </BrowserRouter>
