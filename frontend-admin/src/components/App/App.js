@@ -12,6 +12,7 @@ import ListRoomCategory from '../ListRoomCategory/ListRoomCategory';
 import EditRoom from '../ListRoom/EditRoom';
 import EditHouse from '../ListHouse/EditHouse';
 import NewHouseCategory from '../ListHouseCategory/NewHouseCategory';
+import NewRoomCategory from '../ListRoomCategory/NewRoomCategory';
 
 import useToken from './useToken';
 
@@ -31,6 +32,7 @@ function App() {
         <Switch>
           <Route path="/dashboard"><Dashboard /></Route>
           <Route path="/house_categories/new"><NewHouseCategory /></Route>
+          <Route path="/room_categories/new"><NewRoomCategory /></Route>
           <Route exac path="/houses/new"><NewHouse /></Route>
           <Route path="/houses/:id/edit"><EditHouse /></Route>
           <Route exac path="/rooms/new"><NewRoom /></Route>
