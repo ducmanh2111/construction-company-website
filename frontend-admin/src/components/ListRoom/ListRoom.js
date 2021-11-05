@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { sortBy } from 'lodash';
 import Room from './Room';
 import roomApi from '../../services/roomApi';
-import { Link } from 'react-router-dom';
 
 export default function ListRoom() {
   const [rooms, setRooms] = useState([]);
@@ -10,7 +11,8 @@ export default function ListRoom() {
 
   useEffect(() => {
     roomApi.list().then(data => {
-      setRooms(data);
+      const sortedData = sortBy(data, ['id']);
+      setRooms(sortedData);
     })
   },[reload]);
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { sortBy } from 'lodash';
 import House from './House';
 import houseApi from '../../services/houseApi';
 
@@ -10,7 +11,8 @@ export default function ListHouse() {
 
   useEffect(() => {
     houseApi.list().then(data => {
-      setHouses(data);
+      const sortedData = sortBy(data, ['id']);
+      setHouses(sortedData);
     })
   },[reload]);
 
