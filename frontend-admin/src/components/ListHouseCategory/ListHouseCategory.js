@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Table, Button } from 'react-bootstrap';
+import { sortBy } from 'lodash';
 import HouseCategory from './HouseCategory';
 import houseCategoryApi from '../../services/houseCategoryApi';
 
@@ -11,7 +12,8 @@ export default function ListHouseCategory() {
 
   useEffect(() => {
     houseCategoryApi.list().then(data => {
-      setHouseCategories(data.house_categories);
+      const sortedData = sortBy(data.house_categories, ['id']);
+      setHouseCategories(sortedData);
     })
   }, [reload]);
 

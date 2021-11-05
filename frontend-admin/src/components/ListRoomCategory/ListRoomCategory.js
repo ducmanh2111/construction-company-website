@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Table, Button } from 'react-bootstrap';
+import { sortBy } from 'lodash';
 import RoomCategory from './RoomCategory';
 import roomCategoryApi from '../../services/roomCategoryApi';
 
@@ -11,7 +12,8 @@ export default function ListRoomCategory() {
 
   useEffect(() => {
     roomCategoryApi.list().then(data => {
-      setRoomCategories(data.room_categories);
+      const sortedData = sortBy(data.room_categories, ['id']);
+      setRoomCategories(sortedData);
     })
   }, [reload]);
 
