@@ -31,7 +31,7 @@ const Navbar = (props) => {
               <Link to="/about">Thông tin</Link>
             </li>
             <li className="submenu">
-              <a href="#">Nhà</a>
+              <a href="/#">Nhà</a>
               <ul className="sub-menu">
                 {categories &&
                   categories.map((cat) => (
@@ -42,7 +42,7 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li className="submenu">
-              <a href="#">Phòng</a>
+              <a href="/#">Phòng</a>
               <ul className="sub-menu">
               {roomCategories &&
                   roomCategories.map((room) => (

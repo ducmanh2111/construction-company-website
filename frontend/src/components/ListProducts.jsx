@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const ListProducts = (props) => {
     const {rooms} = props
-    const [items, setItems] = useState([1, 2, 3]);
 
     return (
         <>
