@@ -15,7 +15,7 @@ const Footer = () => {
                     <i className="fa fa-phone" /> Liên hệ ngay 0123 456 789
                     <br />
                     <i className="fa fa-envelope" />{" "}
-                    <a href="#">
+                    <a href="/#">
                         housedesign@gmail.com
                     </a>
                 </div>

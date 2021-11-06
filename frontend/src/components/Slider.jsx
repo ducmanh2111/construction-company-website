@@ -20,6 +20,7 @@ const Slider = () => {
                             aria-hidden="false"
                             tabIndex={-1}
                             role="option"
+                            aria-selected
                             aria-describedby="slick-slide00"
                             style={{
                                 width:'100%',
@@ -31,7 +32,7 @@ const Slider = () => {
                             }}
                         >
                             <div className="img-fill" >
-                                <img src="assets/img/cover_1.jpg" style={styles.image} />
+                                <img src="assets/img/cover_1.jpg" style={styles.image} alt="cover"/>
                                 <div className="info" style={{
                                     display: "flex",
                                     justifyContent: 'center',
