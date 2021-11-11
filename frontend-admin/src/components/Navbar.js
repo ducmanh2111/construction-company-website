@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown, Button } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbars() {
   const signOut = () => {
@@ -27,7 +29,7 @@ export default function Navbars() {
               <NavDropdown title="Categories" id="categories">
                   <NavDropdown.Item>
                     <Link className="text-decoration-none text-muted" to="/room_categories" >
-                          Room Category
+                      Room Category
                     </Link>
                   </NavDropdown.Item>
                 <NavDropdown.Item>
@@ -40,7 +42,13 @@ export default function Navbars() {
               <NavLink className="text-decoration-none text-muted my-2 mx-2" to="/rooms">Room</NavLink>
             </Nav>
             <Nav>
-              <Button variant="light" onClick={e => signOut()}>Sign out</Button>
+              <Button variant="success">
+                <Link to={{pathname: `${process.env.REACT_APP_LANDING_PAGE}`}} target={"_blank"} className="text-decoration-none text-white">Landing page</Link>
+              </Button>{' '}
+              <Button variant="light" onClick={e => signOut()}>
+                <FontAwesomeIcon icon={faSignOutAlt} aria-hidden="true"/>
+                Sign out
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
