@@ -3,19 +3,23 @@ import { Link } from 'react-router-dom';
 import { Container, Table, Button } from 'react-bootstrap';
 import { sortBy } from 'lodash';
 import HouseCategory from './HouseCategory';
-import houseCategoryApi from '../../services/houseCategoryApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { listHouseCategory } from '../../redux/actions/houseCategory';
 
 export default function ListHouseCategory() {
+  const houseCategories = useSelector(state => state.houseCategory.list);
+  const dispatch = useDispatch();
 
-  const [houseCategories, setHouseCategories] = useState([]);
   const [reload, setReload] = useState(false);
+  const [displayHouseCategories, setDisplayHouseCategories] = useState([]);
 
   useEffect(() => {
-    houseCategoryApi.list().then(data => {
-      const sortedData = sortBy(data.house_categories, ['id']);
-      setHouseCategories(sortedData);
-    })
-  }, [reload]);
+    dispatch(listHouseCategory());
+  }, [reload, dispatch]);
+
+  useEffect(() => {
+    setDisplayHouseCategories(sortBy(houseCategories, ['id']))
+  }, [houseCategories])
 
   return (<>
     <Container className="mt-5">
@@ -34,7 +38,7 @@ export default function ListHouseCategory() {
           </tr>
         </thead>
         <tbody className="text-center">
-          {houseCategories.map((houseCategory, index) =>
+          {displayHouseCategories.map((houseCategory, index) =>
             <HouseCategory houseCategory={houseCategory} key={index} reload={reload} setReload={setReload}/>
           )}
         </tbody>
